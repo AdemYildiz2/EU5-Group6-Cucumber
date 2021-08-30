@@ -15,7 +15,6 @@ public abstract class BasePage {
 
     public void navigateToModule(String tab) {
         String tabLocator = "(//span[contains(text(),'"+tab+"')])[1]";
-
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
             WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
@@ -25,6 +24,7 @@ public abstract class BasePage {
         }
 
     }
+
 
 
 
