@@ -17,7 +17,6 @@ public class Hooks {
         Driver.get().manage().window().maximize();
     }
 
-
     @After
     public void tearDown(Scenario scenario){
         if(scenario.isFailed()){
