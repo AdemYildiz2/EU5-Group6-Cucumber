@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
@@ -21,10 +21,11 @@ public class LoginPage {
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement loginButton;
 
-    public void loginAsHR(){
-        usernameInput.sendKeys(ConfigurationReader.get("hr_username"));
-        passwordInput.sendKeys(ConfigurationReader.get("hr_password"));
+    public void login(String usernameStr, String passwordStr) {
+        usernameInput.sendKeys(usernameStr);
+        passwordInput.sendKeys(passwordStr);
         loginButton.click();
+
     }
 
 
