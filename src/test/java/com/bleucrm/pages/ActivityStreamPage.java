@@ -2,9 +2,9 @@ package com.bleucrm.pages;
 
 import com.bleucrm.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 
 public class ActivityStreamPage extends BasePage{
-
 
 
     public void clickOnTab(String tabName){
