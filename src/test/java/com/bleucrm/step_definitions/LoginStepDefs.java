@@ -49,7 +49,7 @@ public class LoginStepDefs {
         String expectedTitle=title;
         String actualTitle= Driver.get().getTitle();
 
-        Assert.assertEquals(actualTitle,expectedTitle);
+        Assert.assertTrue(actualTitle.contains(title));
 
     }
 
