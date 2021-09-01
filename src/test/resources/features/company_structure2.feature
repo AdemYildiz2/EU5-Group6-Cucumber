@@ -13,6 +13,10 @@ Feature: User should be able to use functions under Employee menu
 
   @wip3
   Scenario: The user should be able to find employees by search by Alphabet
+    When The user click the "Find Employee" button
+    And The user search by aphabet with "b"
+    Then The user does not get message "Your search did not match any employees."
+
 
   @wip4
   Scenario: User should be able to export the employee list
@@ -35,3 +39,7 @@ Feature: User should be able to use functions under Employee menu
 
   @wip6
   Scenario: User should be able to send message to employee from the telephone directory
+
+
+  @Wip7
+  Scenario: User should be able to find employees by search box.

@@ -33,8 +33,27 @@ public class CompanyStructure extends BasePage {
     @FindBy(id = "search-textbox-input")
     public WebElement searchBox;
 
+    @FindBy(id = "user-fio")
+    public WebElement searchBoxByAlphabet;
+
+    @FindBy(xpath = "(//p)[contains(text(),'Your search')]")
+    public WebElement searchBoxByAlphabetMessage;
 
 
+
+
+public boolean positiveVerifySearchResult(String search) throws InterruptedException {
+    //String searchElementAddress = "//(//a[@class='employee-name-link'])[contains(text(),'"+search+"')][1]";
+    WebElement searchElement = Driver.get().findElement(By.xpath("//(//a[@class='employee-name-link'])[contains(text(),'"+search+"')][1]"));
+    Thread.sleep(1000);
+    searchElement.click();
+
+    boolean assertion =searchElement.getText().contains("search");
+    System.out.println("assertion = "+assertion);
+
+
+    return assertion;
+}
 
 
 
