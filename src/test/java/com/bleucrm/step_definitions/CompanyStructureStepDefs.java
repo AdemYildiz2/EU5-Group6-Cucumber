@@ -12,6 +12,8 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class CompanyStructureStepDefs {
+    private String expected;
+
     //Company Structure,Find Employee, Staff Changes, Efficiency Report, More
     @Then("The user click the {string} button")
     public void the_user_click_the_button(String tabName) {
@@ -58,7 +60,39 @@ public void the_user_delete_the(String departmentName) {
         CompanyStructure companyStructure = new CompanyStructure();
         companyStructure.deleteDepartment(departmentName);
     }
+//@wip3
+    @When("The user search by aphabet with {string}")
+    public void the_user_search_by_aphabet_with(String expected) throws InterruptedException {
+    CompanyStructure companyStructure = new CompanyStructure();
+    companyStructure.searchBoxByAlphabet.sendKeys(expected);
+    companyStructure.searchBoxByAlphabet.sendKeys(Keys.ENTER);
+    Thread.sleep(2000);
 
+    }
+//@wip3
+    @Then("The user does not get message {string}")
+    public void the_user_does_not_get_message(String expected)  throws InterruptedException{
+        this.expected = expected;
+        CompanyStructure companyStructure = new CompanyStructure();
+        companyStructure.positiveVerifySearchResult(expected);
+        Assert.assertEquals(companyStructure.positiveVerifySearchResult(expected),"true");
+
+
+
+
+
+
+
+
+
+        //System.out.println(companyStructure.searchBoxByAlphabetMessage.getText());
+
+
+
+        //Assert.assertEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
+       // Assert.assertNotEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
+
+    }
 
 
 
