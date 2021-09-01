@@ -85,12 +85,12 @@ public void the_user_delete_the(String departmentName) {
 
 
 
-        //System.out.println(companyStructure.searchBoxByAlphabetMessage.getText());
+        System.out.println(companyStructure.searchBoxByAlphabetMessage.getText());
 
 
 
-        //Assert.assertEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
-       // Assert.assertNotEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
+        Assert.assertEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
+       Assert.assertNotEquals(companyStructure.searchBoxByAlphabetMessage.getText(),expected);
 
     }
 
