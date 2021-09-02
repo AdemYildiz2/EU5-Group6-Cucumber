@@ -8,18 +8,14 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
-
-    public BasePage() {
+    public BasePage(){
         PageFactory.initElements(Driver.get(), this);
     }
 
     public void navigateToModule(String tab) {
         String tabLocator = "(//span[contains(text(),'"+tab+"')])[1]";
-
-////ul/li [@id='bx_left_menu_menu_company']
         try {
             BrowserUtils.waitForClickablility(By.xpath(tabLocator), 5);
-
             WebElement tabElement = Driver.get().findElement(By.xpath(tabLocator));
             new Actions(Driver.get()).moveToElement(tabElement).pause(200).doubleClick(tabElement).build().perform();
         } catch (Exception e) {
@@ -27,6 +23,7 @@ public abstract class BasePage {
         }
 
     }
+
 
 
 
