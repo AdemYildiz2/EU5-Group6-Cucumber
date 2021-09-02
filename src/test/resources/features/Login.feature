@@ -19,9 +19,9 @@ Feature: Login
     Then the user should see the same "" title
     Examples:
       | fakeUser  | password |
-      | fake1     |  UserUser|
-      | fake2     |  |
-      | help desk |  |
+      | fake1     | UserUser |
+      | fake2     | x        |
+      | help desk | y        |
 
 
 
