@@ -21,11 +21,13 @@ public class LoginPage {
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement loginButton;
 
+    @FindBy(xpath = "//*[.='Incorrect login or password']")
+    public WebElement IncorrectInput;
+
     public void login(String usernameStr, String passwordStr) {
         usernameInput.sendKeys(usernameStr);
         passwordInput.sendKeys(passwordStr);
         loginButton.click();
-
     }
 
 

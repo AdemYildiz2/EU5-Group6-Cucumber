@@ -1,8 +1,11 @@
 @wip
 Feature: Login
 
-  Scenario Outline: Users can login
+  Background:
     Given User on the login page
+
+#  Positive
+  Scenario Outline: Users can login
     When The user is logged in as "<userType>"
     Then The user should see "<title>" title
 
@@ -12,16 +15,16 @@ Feature: Login
       | human resource | Portal |
       | marketing      | Portal |
 
-
+# Negative
   Scenario Outline: Users can't login
-    Given User on the login page
-    When The user is logged in as "<fakeUser>"
-    Then the user should see the same "" title
+    When The user is logged in as "<fakeUser>" credentials
+    Then the user should see errorText
     Examples:
-      | fakeUser  | password |
-      | fake1     | UserUser |
-      | fake2     | x        |
-      | help desk | y        |
+      | fakeUser  |
+      | fake1     |
+      | fake2     |
+      | help desk |
+      | blank     |
 
 
 
